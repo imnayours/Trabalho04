@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+    <script src="javascript.js"></script>
+    <script src="tabela.js"></script>
+    <style>
+        .certa{
+            color: green;
+        }
+        .errado{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Livros</h1>
+    <br>
+    <div id="mensagem"></div>
+    <form onsubmit="event.preventDefault(); cadastrar(livros)" class="formulario">
+        <label>
+            Título do livro:
+            <input name="nome" type="text" id="nome"/>
+        </label>
+        <label>
+            Autor(a):
+            <input name="autor" type="text" id="autor"/>
+        </label> 
+        <label>
+            Quantidade de páginas:
+            <input name="paginas" type="text" id="paginas"/>
+        </label>
+        <label>
+            Gênero Literário:
+            <input name="genero" type="text" id="genero"/>
+        </label>
+        <label>
+            Descrição:
+            <textarea name="descricao" cols="30" rows="10"
+            id="descricao"></textarea> <br>
+        </label>
+        <label for="capa" >Capa do livro:</label>
+        <input name="capa" type="file" id="capa"/> <br>
+        <br>
+        <input type="submit" value="Enviar Formulário" >
+    </form>
+    <button onclick="menu()">Mostrar Menu</button>
+    <button onclick="administrar_lista(livros)">Listar Livros</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Páginas</th>
+                <th>Gênero</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+
+</body>
+</html>
